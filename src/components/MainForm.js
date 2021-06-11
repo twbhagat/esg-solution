@@ -1,10 +1,32 @@
 import React, { Component } from 'react'
 
 export default class MainForm extends Component {
+
+    constructor(){
+        super()
+        this.state = {
+            selections: []
+        }
+    }
+
+    handleChange = (event) => {
+        console.log(event)
+        const maxSelections = 5
+        let currentSelections = this.state.selections
+        console.log(currentSelections)
+
+        if(currentSelections.length < maxSelections) {
+            currentSelections.push(event.target.value)
+        }
+        this.setState({
+            selections: currentSelections
+        });
+    }
+
     render() {
+        console.log(this.state.selections)
         return (
             <div>
-            
             
             {/* iCheck */}
             <div className="card card-success">
@@ -36,8 +58,8 @@ export default class MainForm extends Component {
                         {/* radio */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio"/>
-                                <label htmlFor="radioPrimary1">
+                                <input type="radio" id="Emissions"/>
+                                <label htmlFor="Emissions">
                                     Emissions
                                 </label>
                             </div>
@@ -48,8 +70,8 @@ export default class MainForm extends Component {
                         {/* radio */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio"/>
-                                <label htmlFor="radioPrimary1">
+                                <input type="radio" id="Compensation"/>
+                                <label htmlFor="Compensation">
                                     Compensation
                                 </label>
                             </div>
@@ -60,8 +82,8 @@ export default class MainForm extends Component {
                         {/* radio */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio"/>
-                                <label htmlFor="radioPrimary1">
+                                <input type="radio" id="Business Ethics"/>
+                                <label htmlFor="Business Ethics">
                                     Business Ethics
                                 </label>
                             </div>
@@ -75,8 +97,8 @@ export default class MainForm extends Component {
                         {/* radio */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" />
-                                <label htmlFor="radioPrimary1">
+                                <input type="radio" id="Environmental Management" />
+                                <label htmlFor="Environmental Management">
                                     Environmental Management
                                 </label>
                             </div>
@@ -85,9 +107,9 @@ export default class MainForm extends Component {
                         <div className="col-sm-4">
                         {/* radio */}
                         <div className="form-group clearfix">
-                            <div className="icheck-danger d-inline">
-                                <input type="radio" />
-                                <label htmlFor="radioDanger1">
+                            <div className="icheck-primary d-inline">
+                                <input type="radio" id="Diversity"/>
+                                <label htmlFor="Diversity">
                                     Diversity
                                 </label>
                             </div>
@@ -96,9 +118,9 @@ export default class MainForm extends Component {
                         <div className="col-sm-4">
                         {/* radio */}
                         <div className="form-group clearfix">
-                            <div className="icheck-danger d-inline">
-                                <input type="radio" />
-                                <label htmlFor="radioDanger1">
+                            <div className="icheck-primary d-inline">
+                                <input type="radio" id="Capital Structure" />
+                                <label htmlFor="Capital Structure">
                                     Capital Structure
                                 </label>
                             </div>
@@ -111,8 +133,8 @@ export default class MainForm extends Component {
                         {/* radio */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" />
-                                <label htmlFor="radioPrimary1">
+                                <input type="radio" id="Waste" />
+                                <label htmlFor="Waste">
                                     Waste
                                 </label>
                             </div>
@@ -122,9 +144,9 @@ export default class MainForm extends Component {
                         <div className="col-sm-4">
                         {/* radio */}
                         <div className="form-group clearfix">
-                            <div className="icheck-success d-inline">
-                                <input type="radio"/>
-                                <label htmlFor="radioSuccess1">
+                            <div className="icheck-primary d-inline">
+                                <input type="radio" id="Employment Quality"/>
+                                <label htmlFor="Employment Quality">
                                     Employment Quality
                                 </label>
                             </div>
@@ -133,9 +155,9 @@ export default class MainForm extends Component {
                         <div className="col-sm-4">
                         {/* radio */}
                         <div className="form-group clearfix">
-                            <div className="icheck-danger d-inline">
-                                <input type="radio" />
-                                <label htmlFor="radioDanger1">
+                            <div className="icheck-primary d-inline">
+                                <input type="radio" id="Corporate Governance"/>
+                                <label htmlFor="Corporate Governance">
                                     Corporate Governance
                                 </label>
                             </div>
@@ -149,8 +171,8 @@ export default class MainForm extends Component {
                         {/* radio */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" />
-                                <label htmlFor="radioPrimary1">
+                                <input type="radio" id="Resource Use" />
+                                <label htmlFor="Resource Use">
                                     Resource Use
                                 </label>
                             </div>
@@ -160,9 +182,9 @@ export default class MainForm extends Component {
                         <div className="col-sm-4">
                         {/* radio */}
                         <div className="form-group clearfix">
-                            <div className="icheck-danger d-inline">
-                                <input type="radio" />
-                                <label htmlFor="radioDanger1">
+                            <div className="icheck-primary d-inline">
+                                <input type="radio" id="Human Rights" />
+                                <label htmlFor="Human Rights">
                                     Human Rights
                                 </label>
                             </div>
@@ -172,9 +194,9 @@ export default class MainForm extends Component {
                         <div className="col-sm-4">
                         {/* radio */}
                         <div className="form-group clearfix">
-                            <div className="icheck-danger d-inline">
-                                <input type="radio" />
-                                <label htmlFor="radioDanger1">
+                            <div className="icheck-primary d-inline">
+                                <input type="radio" id="Transparency"/>
+                                <label htmlFor="Transparency">
                                     Transparency
                                 </label>
                             </div>
@@ -189,8 +211,8 @@ export default class MainForm extends Component {
                         {/* radio */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio"/>
-                                <label htmlFor="radioPrimary1">
+                                <input type="radio" id="Environmental Stewardship"/>
+                                <label htmlFor="Environmental Stewardship">
                                     Environmental Stewardship
                                 </label>
                             </div>
@@ -201,8 +223,8 @@ export default class MainForm extends Component {
                         {/* radio */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio"/>
-                                <label htmlFor="radioPrimary1">
+                                <input type="radio" id="Labor Rights"/>
+                                <label htmlFor="Labor Rights">
                                     Labor Rights
                                 </label>
                             </div>
@@ -213,8 +235,8 @@ export default class MainForm extends Component {
                         {/* radio */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio"/>
-                                <label htmlFor="radioPrimary1">
+                                <input type="radio" id="Forensic Accounting"/>
+                                <label htmlFor="Forensic Accounting">
                                     Forensic Accounting
                                 </label>
                             </div>
@@ -227,8 +249,8 @@ export default class MainForm extends Component {
                         {/* radio */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio"/>
-                                <label htmlFor="radioPrimary1">
+                                <input type="radio" id="Water"/>
+                                <label htmlFor="Water">
                                     Water
                                 </label>
                             </div>
@@ -239,8 +261,8 @@ export default class MainForm extends Component {
                         {/* radio */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio"/>
-                                <label htmlFor="radioPrimary1">
+                                <input type="radio" id="Occupational Health and Safety"/>
+                                <label htmlFor="Occupational Health and Safety">
                                     Occupational Health &amp; Safety
                                 </label>
                             </div>
@@ -257,8 +279,8 @@ export default class MainForm extends Component {
                         {/* radio */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio"/>
-                                <label htmlFor="radioPrimary1">
+                                <input type="radio" id="Environmental Solutions"/>
+                                <label htmlFor="Environmental Solutions">
                                     Environmental Solutions
                                 </label>
                             </div>
@@ -269,8 +291,8 @@ export default class MainForm extends Component {
                         {/* radio */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio"/>
-                                <label htmlFor="radioPrimary1">
+                                <input type="radio" id="Training and Development"/>
+                                <label htmlFor="Training and Development">
                                     Training &amp; Development
                                 </label>
                             </div>
@@ -291,8 +313,8 @@ export default class MainForm extends Component {
                         {/* radio */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio"/>
-                                <label htmlFor="radioPrimary1">
+                                <input type="radio" id="Product Quality and Safety"/>
+                                <label htmlFor="Product Quality and Safety">
                                     Product Quality &amp; Safety
                                 </label>
                             </div>
@@ -313,8 +335,8 @@ export default class MainForm extends Component {
                         {/* radio */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio"/>
-                                <label htmlFor="radioPrimary1">
+                                <input type="radio" id="Community Relations"/>
+                                <label htmlFor="Community Relations">
                                     Community Relations
                                 </label>
                             </div>
@@ -335,8 +357,8 @@ export default class MainForm extends Component {
                         {/* radio */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio"/>
-                                <label htmlFor="radioPrimary1">
+                                <input type="radio" id="Product Access"/>
+                                <label htmlFor="Product Access">
                                     Product Access
                                 </label>
                             </div>
