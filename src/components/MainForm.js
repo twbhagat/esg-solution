@@ -1,38 +1,91 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom';
 
 export default class MainForm extends Component {
 
     constructor(){
         super()
         this.state = {
-            selections: []
+            selections: [],
         }
     }
 
     handleChange = (event) => {
-        console.log(event)
-        const maxSelections = 5
+        const selectionItem = event.target.id
         let currentSelections = this.state.selections
-        console.log(currentSelections)
 
-        if(currentSelections.length < maxSelections) {
-            currentSelections.push(event.target.value)
+        currentSelections.includes(selectionItem) ? this.removeItem(event.target) : this.addItem(event.target);
+       
+    }
+
+    removeItem = (item) => {
+        let currentSelections = this.state.selections;
+        const index = currentSelections.indexOf(item.id);
+        
+        if(index > -1){
+            currentSelections.splice(index, 1);
         }
+
         this.setState({
             selections: currentSelections
         });
+        console.log(this.state.selections)
     }
 
-    render() {
+    addItem = (item) => {
+        const maxSelections = 5
+        let currentSelections = this.state.selections
+
+        // if(currentSelections.length < maxSelections) {
+        //     currentSelections.push(item.id)
+        // } else {
+        //     this.handleItemLimit(item)
+        // } 
+        
+        currentSelections.push(item.id)
+
+        this.setState({
+            selections: currentSelections
+        });
         console.log(this.state.selections)
+    }
+
+    // handleItemLimit = (item) => {
+    //     console.log("Item Limit")
+
+    // }
+
+    render() {
+        // console.log(this.state.selections)
+        let currentSelectionsList = this.state.selections.join(", ")
+
         return (
             <div>
             
             {/* iCheck */}
             <div className="card card-success">
                 <div className="card-header">
-                <h2 className="card-title">Select up to five causes that you are passionate about and would like to invest in</h2>
-                </div>
+                    <h2 className="card-title">Select up to five causes that you are passionate about and would like to invest in
+                    </h2>
+                </div><br/>
+
+                
+                <div className="row">
+
+                    <div className="col-sm-6">
+                        <div class="card-subheader">
+                            <h4>Your current selections:</h4>
+                            <p>{currentSelectionsList}</p>
+                        </div><br/>
+                    </div>
+
+                    <div className="col-sm-3">
+                        <button type="button" class="btn btn-block btn-primary" >Apply my Passions</button>
+                        <button type="button" class="btn btn-block btn-default">Skip</button>
+                    </div>
+
+                </div><br/>
+
                 <div className="card-body">
                 
                     {/* Category Headers */}
@@ -55,10 +108,10 @@ export default class MainForm extends Component {
 
                     <div className="row">
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Emissions"/>
+                                <input type="checkbox" id="Emissions" onChange={this.handleChange}/>
                                 <label htmlFor="Emissions">
                                     Emissions
                                 </label>
@@ -67,10 +120,10 @@ export default class MainForm extends Component {
                         </div>
 
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Compensation"/>
+                                <input type="checkbox" id="Compensation" onChange={this.handleChange}/>
                                 <label htmlFor="Compensation">
                                     Compensation
                                 </label>
@@ -79,10 +132,10 @@ export default class MainForm extends Component {
                         </div>
 
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Business Ethics"/>
+                                <input type="checkbox" id="Business Ethics" onChange={this.handleChange}/>
                                 <label htmlFor="Business Ethics">
                                     Business Ethics
                                 </label>
@@ -94,10 +147,10 @@ export default class MainForm extends Component {
 
                     <div className="row">
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Environmental Management" />
+                                <input type="checkbox" id="Environmental Management" onChange={this.handleChange} />
                                 <label htmlFor="Environmental Management">
                                     Environmental Management
                                 </label>
@@ -105,10 +158,10 @@ export default class MainForm extends Component {
                         </div>
                         </div>
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Diversity"/>
+                                <input type="checkbox" id="Diversity" onChange={this.handleChange}/>
                                 <label htmlFor="Diversity">
                                     Diversity
                                 </label>
@@ -116,10 +169,10 @@ export default class MainForm extends Component {
                         </div>
                         </div>
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Capital Structure" />
+                                <input type="checkbox" id="Capital Structure" onChange={this.handleChange}/>
                                 <label htmlFor="Capital Structure">
                                     Capital Structure
                                 </label>
@@ -130,10 +183,10 @@ export default class MainForm extends Component {
                     
                     <div className="row">
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Waste" />
+                                <input type="checkbox" id="Waste" onChange={this.handleChange} />
                                 <label htmlFor="Waste">
                                     Waste
                                 </label>
@@ -142,10 +195,10 @@ export default class MainForm extends Component {
                         </div>
                         </div>
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Employment Quality"/>
+                                <input type="checkbox" id="Employment Quality" onChange={this.handleChange}/>
                                 <label htmlFor="Employment Quality">
                                     Employment Quality
                                 </label>
@@ -153,10 +206,10 @@ export default class MainForm extends Component {
                         </div>
                         </div>
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Corporate Governance"/>
+                                <input type="checkbox" id="Corporate Governance" onChange={this.handleChange}/>
                                 <label htmlFor="Corporate Governance">
                                     Corporate Governance
                                 </label>
@@ -168,10 +221,10 @@ export default class MainForm extends Component {
 
                     <div className="row">
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Resource Use" />
+                                <input type="checkbox" id="Resource Use" onChange={this.handleChange} />
                                 <label htmlFor="Resource Use">
                                     Resource Use
                                 </label>
@@ -180,10 +233,10 @@ export default class MainForm extends Component {
                         </div>
 
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Human Rights" />
+                                <input type="checkbox" id="Human Rights" onChange={this.handleChange} />
                                 <label htmlFor="Human Rights">
                                     Human Rights
                                 </label>
@@ -192,10 +245,10 @@ export default class MainForm extends Component {
                         </div>
 
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Transparency"/>
+                                <input type="checkbox" id="Transparency" onChange={this.handleChange}/>
                                 <label htmlFor="Transparency">
                                     Transparency
                                 </label>
@@ -208,10 +261,10 @@ export default class MainForm extends Component {
 
                     <div className="row">
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Environmental Stewardship"/>
+                                <input type="checkbox" id="Environmental Stewardship" onChange={this.handleChange}/>
                                 <label htmlFor="Environmental Stewardship">
                                     Environmental Stewardship
                                 </label>
@@ -220,10 +273,10 @@ export default class MainForm extends Component {
                         </div>
 
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Labor Rights"/>
+                                <input type="checkbox" id="Labor Rights" onChange={this.handleChange}/>
                                 <label htmlFor="Labor Rights">
                                     Labor Rights
                                 </label>
@@ -232,10 +285,10 @@ export default class MainForm extends Component {
                         </div>
 
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Forensic Accounting"/>
+                                <input type="checkbox" id="Forensic Accounting" onChange={this.handleChange}/>
                                 <label htmlFor="Forensic Accounting">
                                     Forensic Accounting
                                 </label>
@@ -246,10 +299,10 @@ export default class MainForm extends Component {
 
                     <div className="row">
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Water"/>
+                                <input type="checkbox" id="Water" onChange={this.handleChange}/>
                                 <label htmlFor="Water">
                                     Water
                                 </label>
@@ -258,10 +311,10 @@ export default class MainForm extends Component {
                         </div>
 
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Occupational Health and Safety"/>
+                                <input type="checkbox" id="Occupational Health and Safety" onChange={this.handleChange}/>
                                 <label htmlFor="Occupational Health and Safety">
                                     Occupational Health &amp; Safety
                                 </label>
@@ -276,10 +329,10 @@ export default class MainForm extends Component {
 
                     <div className="row">
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Environmental Solutions"/>
+                                <input type="checkbox" id="Environmental Solutions" onChange={this.handleChange}/>
                                 <label htmlFor="Environmental Solutions">
                                     Environmental Solutions
                                 </label>
@@ -288,10 +341,10 @@ export default class MainForm extends Component {
                         </div>
 
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Training and Development"/>
+                                <input type="checkbox" id="Training and Development" onChange={this.handleChange}/>
                                 <label htmlFor="Training and Development">
                                     Training &amp; Development
                                 </label>
@@ -310,10 +363,10 @@ export default class MainForm extends Component {
                         </div>
 
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Product Quality and Safety"/>
+                                <input type="checkbox" id="Product Quality and Safety" onChange={this.handleChange}/>
                                 <label htmlFor="Product Quality and Safety">
                                     Product Quality &amp; Safety
                                 </label>
@@ -332,10 +385,10 @@ export default class MainForm extends Component {
                         </div>
 
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Community Relations"/>
+                                <input type="checkbox" id="Community Relations" onChange={this.handleChange}/>
                                 <label htmlFor="Community Relations">
                                     Community Relations
                                 </label>
@@ -354,10 +407,10 @@ export default class MainForm extends Component {
                         </div>
 
                         <div className="col-sm-4">
-                        {/* radio */}
+                        {/* checkbox */}
                         <div className="form-group clearfix">
                             <div className="icheck-primary d-inline">
-                                <input type="radio" id="Product Access"/>
+                                <input type="checkbox" id="Product Access" onChange={this.handleChange}/>
                                 <label htmlFor="Product Access">
                                     Product Access
                                 </label>
