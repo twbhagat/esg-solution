@@ -19,6 +19,8 @@ export default class SelectionsForm extends Component {
 
         return (
             <div>
+            <section class="content">
+            <div class="container-fluid">
                 {/* iCheck */}
             <div className="card card-success">
                 <div className="card-header">
@@ -26,6 +28,7 @@ export default class SelectionsForm extends Component {
                         {this.props.currentSelections.length > 0 ? selectionCounter : selectionPrompt}
                     </h1>                
                 </div><br/>
+                <div className="card-body"></div>
 
                 <div className="row">
 
@@ -385,6 +388,8 @@ export default class SelectionsForm extends Component {
               
             </div>
             {/* /.card */}
+            </div>
+            </section>
             </div>
         )
     }
