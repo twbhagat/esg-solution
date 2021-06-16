@@ -78,6 +78,8 @@ export default class MainForm extends Component {
 
     render() {
 
+        
+
         return (
             <div>
                 {this.state.selectionsComplete ? <StrengthsForm back={this.returnToSelections} selections={this.state.selections}/> : <SelectionsForm currentSelections={this.state.selections} handleChange={this.handleChange} submit={this.selectionSubmission}/>}

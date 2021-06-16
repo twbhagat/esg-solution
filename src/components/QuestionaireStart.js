@@ -36,7 +36,9 @@ export default class QuestionaireStart extends Component {
                                 <br/>
 
                                 <td>
-                                <button type="button" class="btn btn-block btn-default">I want to continue with conventional profile</button>
+                                <button type="button" class="btn btn-block btn-default">
+                                    I want to continue with conventional profile
+                                </button>
                                 </td>
 
                             </div>
