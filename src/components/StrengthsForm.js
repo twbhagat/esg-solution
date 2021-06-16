@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 export default class StrengthsForm extends Component {
     render() {
+        console.log(this.props)
         return (
             <div>
                 
@@ -10,6 +11,8 @@ export default class StrengthsForm extends Component {
                      <h2 className="card-title">Please indicate the strengths or levels of your interest in your selected enviornmental causes for investing through the sliders below:</h2>
                     </div>
                     <div className="card-body"></div>
+
+                    <button onClick={this.props.back}>Back to Cause Selections</button>
 
                     
                 {/* <div class="row">

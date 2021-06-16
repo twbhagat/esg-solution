@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom';
 
 export default class QuestionaireStart extends Component {
     render() {
@@ -24,7 +25,12 @@ export default class QuestionaireStart extends Component {
                                 <p>This is the best time to put value in your values</p>
 
                                 <td>
-                                <button type="button" class="btn btn-block btn-primary">I would like to establish my ESG profile</button>
+                                    <NavLink to="/form">
+                                        <button type="button" class="btn btn-block btn-primary">
+                                            I would like to establish my ESG profile
+                                        </button>
+                                    </NavLink>
+                                    
                                 </td>
 
                                 <br/>
