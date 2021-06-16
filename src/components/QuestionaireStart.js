@@ -5,7 +5,8 @@ export default class QuestionaireStart extends Component {
     render() {
         return (
             <div>
-
+            <section class="content">
+            <div class="container-fluid">
                 <div className="card card-success">
                     <div className="card-header">
                      <h5 className="card-title">Create your Investment profile</h5>
@@ -46,6 +47,8 @@ export default class QuestionaireStart extends Component {
 
                     </div>
                 </div>
+            </div>
+            </section>
             </div>
         )
     }
