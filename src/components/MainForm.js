@@ -10,7 +10,6 @@ export default class MainForm extends Component {
         this.state = {
             selections: [],
             selectionsComplete: false,
-            skip: false
         }
     }
 
@@ -82,6 +81,16 @@ export default class MainForm extends Component {
 
         return (
             <div >
+                <section class="content-header">
+                    <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h4>Fill out a quick and easy application</h4>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
                 {this.state.selectionsComplete ? <StrengthsForm back={this.returnToSelections} selections={this.state.selections}/> : <SelectionsForm currentSelections={this.state.selections} handleChange={this.handleChange} submit={this.selectionSubmission}/>}
             </div>
         )

@@ -4,6 +4,15 @@ export default class ExclusionsForm extends Component {
     render() {
         return (
             <div>
+              <section class="content-header">
+                    <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h4>Fill out a quick and easy application</h4>
+                        </div>
+                    </div>
+                    </div>
+              </section>
 
                 <div className="card card-success">
                     <div className="card-header">

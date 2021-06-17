@@ -5,6 +5,16 @@ export default class QuestionaireStart extends Component {
     render() {
         return (
             <div>
+            <section class="content-header">
+                    <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h4>Fill out a quick and easy application</h4>
+                        </div>
+                    </div>
+                    </div>
+            </section>
+
             <section class="content">
             <div class="container-fluid">
                 <div className="card card-success">
@@ -41,6 +51,7 @@ export default class QuestionaireStart extends Component {
                                     I want to continue with conventional profile
                                 </button>
                                 </td>
+                                <br/>
 
                             </div>
                         </div>
