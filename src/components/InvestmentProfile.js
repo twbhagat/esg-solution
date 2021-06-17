@@ -4,6 +4,8 @@ export default class InvestmentProfile extends Component {
     render() {
         return (
             <div>
+            <section class="content">
+            <div class="container-fluid">
                         <tr>
                         <td>
                             <div class="btn-group">
@@ -131,8 +133,8 @@ export default class InvestmentProfile extends Component {
                         </div>
                      </div>
                 </div>
-            
-
+            </div>
+            </section>
             </div>
         )
     }

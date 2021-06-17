@@ -29,12 +29,9 @@ export default class LoginPage extends Component {
           })
         })
 
-        this.sendCredentialsToApp()
+        this.props.submit(this.state);
     }
 
-    sendCredentialsToApp = () => {
-        this.props.submit(this.state)
-    }
 
     render() {
         return (
@@ -48,7 +45,7 @@ export default class LoginPage extends Component {
                 <div className="card">
                 <div className="card-body login-card-body">
                     <p className="login-box-msg">Sign in to start your session</p>
-                    <form action="../../index3.html" method="post">
+                    <form action="../../index3.html" method="post" onSubmit={this.login}>
                     <div className="input-group mb-3">
                         <input type="email" className="form-control" placeholder="Email" />
                         <div className="input-group-append">
