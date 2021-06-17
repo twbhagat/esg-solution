@@ -40,13 +40,6 @@ export default class StrengthsForm extends Component {
                             </div><br/>
                         </div>
 
-                        {/* <div className="col-sm-3">
-                            <button type="button" class="btn btn-block btn-primary" onClick={this.props.submit}>Apply my Passions</button>
-                            <NavLink to="/exclusions">
-                                <button type="button" class="btn btn-block btn-default">Skip</button>
-                            </NavLink>
-                        </div> */}
-
                     </div>
 
                     <button onClick={this.props.back}>Back to Cause Selections</button>

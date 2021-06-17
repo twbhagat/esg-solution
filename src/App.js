@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { Component } from 'react'
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
@@ -10,32 +11,38 @@ import StrengthsForm from './components/StrengthsForm';
 import ExclusionsForm from './components/ExclusionsForm'
 import QuestionaireStart from './components/QuestionaireStart';
 import InvestmentProfile from './components/InvestmentProfile';
+import LoginPage from './components/LoginPage';
+import InvestmentPortal from './components/InvestmentPortal';
+import { render } from '@testing-library/react';
 
+export default class App extends Component {
 
-
-function App() {
-  
-  return (
-    <Router>
-    <div class="wrapper">
-      <Navbar/>
-      <Sidebar/>
-      <div class="content-wrapper">
-
-      {/* <Header/> */}
-
-      <Route exact path="/" component={QuestionaireStart}/>
-      <Route exact path="/form" component={MainForm}/>
-      <Route exact path="/strengths" component={StrengthsForm}/>
-      <Route exact path="/exclusions" component={ExclusionsForm}/>
-      <Route exact path="/profile" component={InvestmentProfile}/> 
-      </div>
-      <Footer/>
-      </div>
-    </Router>
-
-   
-      );
+  constructor() {
+    super()
+    this.state = {
+      authBearer: null,
+      authToken: null
     }
+  }
+
+  receiveLogin = (bearer, token) => {
+    this.setState({
+      authBearer: bearer,
+      authToken: token
+    });
+  }
+
+  
+  render(){
+    return (
+      
+      <div>
+        {this.state.authToken ? <InvestmentPortal user={this.state.authBearer}/> : <LoginPage submit={this.receiveLogin}/>}
+      </div>
+     
+     
+    );
+  }
     
-    export default App;
+}
+
