@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
@@ -21,16 +21,20 @@ function App() {
       <Sidebar/>
       <div class="content-wrapper">
       <Header/>
+      <Switch>
       <Route exact path="/" component={QuestionaireStart}/>
       <Route exact path="/form" component={MainForm}/>
       <Route exact path="/strengths" component={StrengthsForm}/>
       <Route exact path="/exclusions" component={ExclusionsForm}/>
-      <Route exact path="/profile" component={InvestmentProfile}/>
+      <Route exact path="/profile" component={InvestmentProfile}/> 
+      </Switch>
       </div>
       <Footer/>
-    </div>
+      </div>
     </Router>
-  );
-}
 
-export default App;
+   
+      );
+    }
+    
+    export default App;
