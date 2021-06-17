@@ -29,7 +29,6 @@ function App() {
       <Route exact path="/strengths" component={StrengthsForm}/>
       <Route exact path="/exclusions" component={ExclusionsForm}/>
       <Route exact path="/profile" component={InvestmentProfile}/> 
-      </Switch>
       </div>
       <Footer/>
       </div>
