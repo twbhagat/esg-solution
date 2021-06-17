@@ -38,7 +38,7 @@ export default class QuestionaireStart extends Component {
                                 <p>This is the best time to put value in your values</p>
 
                                 <td>
-                                    <NavLink to="/form">
+                                    <NavLink to="/main-form">
                                         <button type="button" class="btn btn-block btn-primary">
                                             I would like to establish my ESG profile
                                         </button>
