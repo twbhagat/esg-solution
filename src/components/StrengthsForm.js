@@ -23,7 +23,9 @@ export default class StrengthsForm extends Component {
     render() {
         return (
             <div>
-                
+            <section class="content">
+            <div class="container-fluid">
+
                 <div className="card card-success">
                     <div className="card-header">
                      <h2 className="card-title">Please indicate the strengths or levels of your interest in your selected enviornmental causes for investing through the sliders below:</h2>
@@ -61,6 +63,8 @@ export default class StrengthsForm extends Component {
                     
                 
                 </div>
+            </div>
+            </section>
             </div>
         )
     }
