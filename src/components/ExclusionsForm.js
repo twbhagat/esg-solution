@@ -61,7 +61,9 @@ export default class ExclusionsForm extends Component {
 
                     <div class="col-md-3 col-sm-6 col-12">
                       <div class="info-box shadow-none">
-                        <a class="btn btn-app"><i class="fas fa-play"></i></a>
+                         <button class="btn">
+                          <img src ="ex_3.JPG"/>
+                         </button>
                         <div class="info-box-content">
                             <span class="info-box-text">Thermal Coal</span>
                          <div class="form-group">
@@ -72,6 +74,54 @@ export default class ExclusionsForm extends Component {
                      </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-12">
+                      <div class="info-box shadow-none">
+                         <button class="btn">
+                          <img src ="ex_4.JPG"/>
+                         </button>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Controversal Weapons and Involvement</span>
+                         <div class="form-group">
+                        <label>Reason</label>
+                        <input type="text" class="form-control" placeholder="Add Comments"/>
+                         </div>
+                        </div>
+                     </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-12">
+                      <div class="info-box shadow-none">
+                         <button class="btn">
+                          <img src ="ex_5.JPG"/>
+                         </button>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Defense</span>
+                         <div class="form-group">
+                        <label>Reason</label>
+                        <input type="text" class="form-control" placeholder="Add Comments"/>
+                         </div>
+                        </div>
+                     </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-12">
+                      <div class="info-box shadow-none">
+                         <button class="btn">
+                          <img src ="ex_6.JPG"/>
+                         </button>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Recreational Drugs</span>
+                         <div class="form-group">
+                        <label>Reason</label>
+                        <input type="text" class="form-control" placeholder="Add Comments"/>
+                         </div>
+                        </div>
+                     </div>
+                    </div>
+                </div>
+
 
                 <div class="row">
                     <div class="col-md-3 col-sm-6 col-12">
