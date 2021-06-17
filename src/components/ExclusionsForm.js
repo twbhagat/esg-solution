@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 
 export default class ExclusionsForm extends Component {
+
     render() {
+      
         return (
+          
             <div>
               <section class="content-header">
                     <div class="container-fluid">
@@ -28,7 +31,9 @@ export default class ExclusionsForm extends Component {
                 <div class="row">
                     <div class="col-md-3 col-sm-6 col-12">
                       <div class="info-box shadow-none">
-                        <a class="btn btn-app"><i class="fas fa-play"></i></a>
+                         <button class="btn">
+                          <img src ="ex_1.JPG"/>
+                         </button>
                         <div class="info-box-content">
                             <span class="info-box-text">Adult Entertainment</span>
                          <div class="form-group">
@@ -41,7 +46,9 @@ export default class ExclusionsForm extends Component {
 
                     <div class="col-md-3 col-sm-6 col-12">
                       <div class="info-box shadow-none">
-                        <a class="btn btn-app"><i class="fas fa-play"></i></a>
+                        <button class="btn">
+                          <img src ="ex_2.JPG"/>
+                         </button>
                         <div class="info-box-content">
                             <span class="info-box-text">Alcohol</span>
                          <div class="form-group">

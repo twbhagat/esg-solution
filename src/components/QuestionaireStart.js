@@ -23,10 +23,12 @@ export default class QuestionaireStart extends Component {
                     </div>
                     <div className="card-body"></div>
 
+            
                     <div className="row">
                         <div className="col-sm-6">
-                                <h5>Image</h5>
+                            <img src= "start_page.JPG"/>
                         </div>
+                    
 
                         <div className="col-sm-6"> 
                             <div>

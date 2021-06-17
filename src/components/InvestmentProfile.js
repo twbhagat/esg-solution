@@ -27,9 +27,7 @@ export default class InvestmentProfile extends Component {
                     <div class="card card-outline card-info">
                         <div class="card-header">
                             <h3 class="card-title">ESG Profile Summary</h3>
-                        {/* <div class="card-body">
-                            <canvas id="donutChart" style="min-height: 1px; height: 1px; max-height: 1px; max-width: 2%;"></canvas>
-                        </div> */}
+                            <canvas id="donutChart" width="526" height="375" class="chartjs-render-monitor"></canvas>
                         </div>
                     </div>
                     </div>
