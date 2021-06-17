@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
-
-
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 export default class SelectionsForm extends Component {
     constructor(){
@@ -27,12 +26,12 @@ export default class SelectionsForm extends Component {
                     <h1 className="card-title">
                         {this.props.currentSelections.length > 0 ? selectionCounter : selectionPrompt}
                     </h1>                
-                </div><br/>
+                </div>
                 <div className="card-body"></div>
 
                 <div className="row">
 
-                    <div className="col-sm-6">
+                    <div className="col-sm-8">
                         <div class="card-subheader">
                             <h5>Your current selections:</h5>
                             <p>{currentSelectionsList}</p>
@@ -41,7 +40,9 @@ export default class SelectionsForm extends Component {
 
                     <div className="col-sm-3">
                         <button type="button" class="btn btn-block btn-primary" onClick={this.props.submit}>Apply my Passions</button>
-                        <button type="button" class="btn btn-block btn-default">Skip</button>
+                        <NavLink to="/exclusions">
+                            <button type="button" class="btn btn-block btn-default">Skip</button>
+                        </NavLink>
                     </div>
 
                 </div><br/>

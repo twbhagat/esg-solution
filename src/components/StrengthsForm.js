@@ -1,8 +1,26 @@
 import React, { Component } from 'react'
 
 export default class StrengthsForm extends Component {
+
+
+    constructor(){
+        super()
+    }
+
+    buildRange = (sel) => {
+        return (
+           <div>
+                <p>{`${sel}`}</p>
+                <div className="slider-yellow" >
+                    <div class="slider-track">
+                    <input type="text" value="" className="slider form-control" data-slider-min={0} data-slider-max={100} data-slider-step={5} data-slider-value="[0%,100%]" data-slider-orientation="horizontal" data-slider-selection="before" data-slider-tooltip="show" />
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
     render() {
-        console.log(this.props)
         return (
             <div>
                 
@@ -11,6 +29,25 @@ export default class StrengthsForm extends Component {
                      <h2 className="card-title">Please indicate the strengths or levels of your interest in your selected enviornmental causes for investing through the sliders below:</h2>
                     </div>
                     <div className="card-body"></div>
+
+                    <div className="row">
+
+                        <div className="col-sm-8">
+                            <div class="card-subheader">
+                                {this.props.selections.map(sel => {
+                                    return this.buildRange(sel);
+                                })}
+                            </div><br/>
+                        </div>
+
+                        {/* <div className="col-sm-3">
+                            <button type="button" class="btn btn-block btn-primary" onClick={this.props.submit}>Apply my Passions</button>
+                            <NavLink to="/exclusions">
+                                <button type="button" class="btn btn-block btn-default">Skip</button>
+                            </NavLink>
+                        </div> */}
+
+                    </div>
 
                     <button onClick={this.props.back}>Back to Cause Selections</button>
 

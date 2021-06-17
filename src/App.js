@@ -14,13 +14,14 @@ import InvestmentProfile from './components/InvestmentProfile';
 
 
 function App() {
+  
   return (
     <Router>
     <div class="wrapper">
       <Navbar/>
       <Sidebar/>
       <div class="content-wrapper">
-      <Header/>
+      {/* <Header/> */}
       <Route exact path="/" component={QuestionaireStart}/>
       <Route exact path="/form" component={MainForm}/>
       <Route exact path="/strengths" component={StrengthsForm}/>
