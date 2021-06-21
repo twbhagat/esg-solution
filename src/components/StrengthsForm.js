@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Form } from 'semantic-ui-react'
 
 export default class StrengthsForm extends Component {
 
@@ -10,15 +11,13 @@ export default class StrengthsForm extends Component {
     buildRange = (sel) => {
         return (
            <div>
-                <p>{`${sel}`}</p>
-                <div className="slider-yellow" >
-                    <div class="slider-track">
-                    <input type="text" value="" className="slider form-control" data-slider-min={0} data-slider-max={100} data-slider-step={5} data-slider-value="[0%,100%]" data-slider-orientation="horizontal" data-slider-selection="before" data-slider-tooltip="show" />
-                    </div>
-                </div>
+               <h6>{sel}</h6>
+               <Form.Input type="range" min={0} max={100} step={5} name="strength"></Form.Input>
             </div>
         )
     }
+
+    handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
     render() {
         return (
@@ -33,13 +32,15 @@ export default class StrengthsForm extends Component {
                     <div className="card-body"></div>
 
                     <div className="row">
-
-                        <div className="col-sm-8">
-                            <div class="card-subheader">
-                                {this.props.selections.map(sel => {
-                                    return this.buildRange(sel);
-                                })}
-                            </div><br/>
+                        <div className="col-sm-1"></div>
+                        <div className="col-sm-6">
+                            <Form>
+                                <div class="card-subheader">
+                                    {this.props.selections.map(sel => {
+                                        return this.buildRange(sel);
+                                    })}
+                                </div><br/>  
+                            </Form>              
                         </div>
 
                     </div>

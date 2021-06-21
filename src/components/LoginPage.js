@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Form } from 'semantic-ui-react';
 
 export default class LoginPage extends Component {
 
@@ -10,19 +11,29 @@ export default class LoginPage extends Component {
         }
     }
 
-    login = (user) => {
-        fetch('', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
+    login = () => {
+        let input = {
+            "username": "admin",
+            "password": "admin",
+            "rememberMe": true
+        }
+        console.log(input)
+        console.log("start of fetch")
+        fetch('http://localhost:8888/admin/docs/api/authenticate', {
+            mode: 'no-cors',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
             Accept: 'application/json'
           },
           body: JSON.stringify({
-            user
+            input
           })
         })
-        .then(resp => resp.json())
+        .then(resp => {
+            resp.json()})
         .then(token => {
+            console.log(token)
           this.setState({
             authBearer: token.user,
             authToken: token.jwt,
@@ -45,9 +56,9 @@ export default class LoginPage extends Component {
                 <div className="card">
                 <div className="card-body login-card-body">
                     <p className="login-box-msg">Sign in to start your session</p>
-                    <form action="../../index3.html" method="post" onSubmit={this.login}>
+                    <Form onSubmit={this.login}>
                     <div className="input-group mb-3">
-                        <input type="email" className="form-control" placeholder="Email" />
+                        <input type="text" className="form-control" placeholder="Username" />
                         <div className="input-group-append">
                         <div className="input-group-text">
                             <span className="fas fa-envelope" />
@@ -77,7 +88,7 @@ export default class LoginPage extends Component {
                         </div>
                         {/* /.col */}
                     </div>
-                    </form>
+                    </Form>
                     
                     {/* /.social-auth-links */}
                     <p className="mb-1">
