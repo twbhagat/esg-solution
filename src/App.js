@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import React, { Component } from 'react'
+import axios from 'axios'
+import React, { useState, useEffect, Component } from 'react'
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
@@ -14,6 +15,11 @@ import InvestmentProfile from './components/InvestmentProfile';
 import LoginPage from './components/LoginPage';
 import InvestmentPortal from './components/InvestmentPortal';
 import { render } from '@testing-library/react';
+
+// const UserProfiles = () => {}
+
+//   const fetchUserProfiles () =>
+//     axios.get("")
 
 export default class App extends Component {
 

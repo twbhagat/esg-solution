@@ -8,6 +8,7 @@ import MainForm from './MainForm';
 import ExclusionsForm from './ExclusionsForm'
 import QuestionaireStart from './QuestionaireStart';
 import InvestmentProfile from './InvestmentProfile';
+import StrengthsForm from './StrengthsForm';
 
 export default class InvestmentPortal extends Component {
 
@@ -23,6 +24,7 @@ export default class InvestmentPortal extends Component {
                         <Route exact path="/main-form" component={MainForm}/>
                         <Route exact path="/ex-form" component={ExclusionsForm}/>
                         <Route exact path="/profile" component={InvestmentProfile}/>
+                        <Route exact path="/strength" component={StrengthsForm}/>
                     </div>
                     <Footer/>
                 </div>
