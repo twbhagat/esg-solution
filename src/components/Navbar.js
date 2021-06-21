@@ -11,10 +11,16 @@ export default class Navbar extends Component {
                             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                         </li>
                         <li class="nav-item d-none d-sm-inline-block">
-                            <a href="index3.html" class="nav-link">Investment Portal</a>
+                            <a href="./profile" class="nav-link">Investment Portal</a>
                         </li>
                         <li class="nav-item d-none d-sm-inline-block">
-                            <a href="#" class="nav-link">Contact</a>
+                            <a href="./main-form" class="nav-link">ESG Questionaire</a>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+                            <a href="./strength" class="nav-link">Strengths</a>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+                            <a href="./ex-form" class="nav-link">Exclusions</a>
                         </li>
                     </ul>
 
